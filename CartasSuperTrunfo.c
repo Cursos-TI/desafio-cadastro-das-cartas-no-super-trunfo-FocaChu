@@ -41,7 +41,7 @@ int main() {
     while ((c = getchar()) != '\n' && c != EOF); // limpa buffer
     
     printf("Digite o código da carta 1 (somente 3 digitos): \n");
-    scanf("%s", codigoCarta1);
+    scanf("%3s", codigoCarta1); 
     while ((c = getchar()) != '\n' && c != EOF); // limpa buffer
 
     printf("Digite o nome da cidade da carta 1: \n");
@@ -80,7 +80,7 @@ int main() {
     while ((c = getchar()) != '\n' && c != EOF); // limpa buffer
 
     printf("Digite o código da carta 2 (somente 3 digitos): \n");
-    scanf("%s", codigoCarta2);
+    scanf("%3s", codigoCarta2); 
     while ((c = getchar()) != '\n' && c != EOF); // limpa buffer
 
     printf("Digite o nome da cidade da carta 2: \n");
