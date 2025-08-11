@@ -73,8 +73,8 @@ int main() {
     while ((c = getchar()) != '\n' && c != EOF); // limpa buffer
 
     //calcula o restante das informações
-    densidadePopulacionalCarta1 = populacaoCarta1 / areaKmqCarta1;
-    pibPerCapitaCarta1 = (pibCarta1 * 1000000000.0f) / populacaoCarta1;
+    densidadePopulacionalCarta1 = (float) populacaoCarta1 / areaKmqCarta1;
+    pibPerCapitaCarta1 = (float) (pibCarta1 * 1000000000.0f) / populacaoCarta1;
 
 
     //Exibição dos dados da carta 1
@@ -119,8 +119,8 @@ int main() {
     while ((c = getchar()) != '\n' && c != EOF); // limpa buffer
 
     //calcula o restante das informações
-    densidadePopulacionalCarta2 = populacaoCarta2 / areaKmqCarta2;
-    pibPerCapitaCarta2 = (pibCarta2 * 1000000000.0f) / populacaoCarta2;
+    densidadePopulacionalCarta2 = (float) populacaoCarta2 / areaKmqCarta2;
+    pibPerCapitaCarta2 = (float) (pibCarta2 * 1000000000.0f) / populacaoCarta2;
 
     //Exibição dos dados da carta 2
     printf("\nCarta 2:\n");
