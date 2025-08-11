@@ -32,6 +32,12 @@ int main() {
     int qtdPontosTuristicosCarta1;
     int qtdPontosTuristicosCarta2;
 
+    float densidadePopulacionalCarta1;
+    float densidadePopulacionalCarta2;
+
+    float pibPerCapitaCarta1;
+    float pibPerCapitaCarta2;
+
     //Limpar o buffer inicial
     int c;
 
@@ -64,6 +70,10 @@ int main() {
     scanf("%d", &qtdPontosTuristicosCarta1);
     while ((c = getchar()) != '\n' && c != EOF); // limpa buffer
 
+    //calcula o restante das informações
+    densidadePopulacionalCarta1 = populacaoCarta1 / areaKmqCarta1;
+    pibPerCapitaCarta1 = pibCarta1 / populacaoCarta1;
+
     //Exibição dos dados da carta 1
     printf("\nCarta 1:\n");
     printf("Estado: %c\n", estadoCarta1);
@@ -73,6 +83,8 @@ int main() {
     printf("Área: %.2f km²\n", areaKmqCarta1);
     printf("PIB: %.2f\n", pibCarta1);
     printf("Pontos turísticos: %d\n", qtdPontosTuristicosCarta1);
+    printf("Densidade populacional: %.2f hab/km²\n", densidadePopulacionalCarta1);
+    printf("PIB per capita: %.2f reais\n", pibPerCapitaCarta1);
 
     //Entrada dos dados da carta 2
     printf("\nDigite a letra que representa o Estado da carta 2: \n");
@@ -103,6 +115,10 @@ int main() {
     scanf("%d", &qtdPontosTuristicosCarta2);
     while ((c = getchar()) != '\n' && c != EOF); // limpa buffer
 
+    //calcula o restante das informações
+    densidadePopulacionalCarta2 = populacaoCarta2 / areaKmqCarta2;
+    pibPerCapitaCarta2 = pibCarta2 / populacaoCarta2;
+
     //Exibição dos dados da carta 2
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", estadoCarta2);
@@ -112,6 +128,8 @@ int main() {
     printf("Área: %.2f km²\n", areaKmqCarta2);
     printf("PIB: %.2f\n", pibCarta2);
     printf("Pontos turísticos: %d\n", qtdPontosTuristicosCarta2);
+    printf("Densidade populacional: %.2f hab/km²\n", densidadePopulacionalCarta2);
+    printf("PIB per capita: %.2f reais\n", pibPerCapitaCarta2);
 
     return 0;
 }
