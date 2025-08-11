@@ -76,17 +76,31 @@ int main() {
   scanf("%d", &qtdPontosTuristicosCarta1);
   while ((c = getchar()) != '\n' && c != EOF);
 
-  // verifica se a população é igual a zero e trata o caso
-  if (populacaoCarta1 == 0) {
-    populacaoCarta1 = 1;
+  // Densidade populacional
+  if (areaKmqCarta1 != 0.0) {
+    densidadePopulacionalCarta1 = (double)populacaoCarta1 / areaKmqCarta1;
+  } else {
+    densidadePopulacionalCarta1 = 0.0;
   }
   
-  // calcula o restante das informações
-  densidadePopulacionalCarta1 = (double)populacaoCarta1 / areaKmqCarta1;
-  pibPerCapitaCarta1 = pibCarta1 / populacaoCarta1;
-  superPoderCarta1 = populacaoCarta1 + areaKmqCarta1 + pibCarta1 +
-                      qtdPontosTuristicosCarta1 + pibPerCapitaCarta1 +
-                      (1.0f / densidadePopulacionalCarta1);
+  // PIB per capita
+  if (populacaoCarta1 != 0) {
+    pibPerCapitaCarta1 = (pibCarta1 * 1000000000.0) / (double)populacaoCarta1;
+  } else {
+    pibPerCapitaCarta1 = 0.0;
+  }
+
+  // Super Poder
+  double inversoDensidadeCarta1_seguro = 0.0;
+  if (densidadePopulacionalCarta1 != 0.0) {
+    inversoDensidadeCarta1_seguro = 1.0 / densidadePopulacionalCarta1;
+  }
+  superPoderCarta1 = (double)populacaoCarta1 +
+                      areaKmqCarta1 +
+                      (pibCarta1 * 1000000000.0) +
+                      (double)qtdPontosTuristicosCarta1 +
+                      pibPerCapitaCarta1 +
+                      inversoDensidadeCarta1_seguro;
 
   // --- Exibição dos dados da carta 1 ---
   printf("\nCarta 1:\n");
@@ -130,17 +144,32 @@ int main() {
   scanf("%d", &qtdPontosTuristicosCarta2);
   while ((c = getchar()) != '\n' && c != EOF);
 
-  // verifica se a população é igual a zero e trata o caso
-  if (populacaoCarta2 == 0) {
-    populacaoCarta2 = 1;
+  // Densidade populacional
+  if (areaKmqCarta2 != 0.0) {
+    densidadePopulacionalCarta2 = (double)populacaoCarta2 / areaKmqCarta2;
+  } else {
+    densidadePopulacionalCarta2 = 0.0;
   }
+  
+  // PIB per capita
+  if (populacaoCarta2 != 0) {
+    pibPerCapitaCarta2 = (pibCarta2 * 1000000000.0) / (double)populacaoCarta2;
+  } else {
+    pibPerCapitaCarta2 = 0.0;
+  }
+  
+  // Super Poder
+  double inversoDensidadeCarta2_seguro = 0.0;
 
-  // calcula o restante das informações
-  densidadePopulacionalCarta2 = (double)populacaoCarta2 / areaKmqCarta2;
-  pibPerCapitaCarta2 = pibCarta2 / populacaoCarta2;
-  superPoderCarta2 = populacaoCarta2 + areaKmqCarta2 + pibCarta2 +
-                      qtdPontosTuristicosCarta2 + pibPerCapitaCarta2 +
-                      (1.0f / densidadePopulacionalCarta2);
+  if (densidadePopulacionalCarta2 != 0.0) {
+    inversoDensidadeCarta2_seguro = 1.0 / densidadePopulacionalCarta2;
+  }
+  superPoderCarta2 = (double)populacaoCarta2 +
+                      areaKmqCarta2 +
+                      (pibCarta2 * 1000000000.0) +
+                      (double)qtdPontosTuristicosCarta2 +
+                      pibPerCapitaCarta2 +
+                      inversoDensidadeCarta2_seguro;
 
   // --- Exibição dos dados da carta 2 ---
   printf("\nCarta 2:\n");
@@ -158,61 +187,14 @@ int main() {
   // --- Placar Final ---
   printf("\n");
 
-  if (populacaoCarta1 > populacaoCarta2) {
-    printf("Carta 1 vence na categoria População!\n");
-  } else if (populacaoCarta1 < populacaoCarta2) {
-    printf("Carta 2 vence na categoria População!\n");
-  } else {
-    printf("Empate na categoria População!\n");
-  }
-
-  if (areaKmqCarta1 > areaKmqCarta2) {
-    printf("Carta 1 vence na categoria Área!\n");
-  } else if (areaKmqCarta1 < areaKmqCarta2) {
-    printf("Carta 2 vence na categoria Área!\n");
-  } else {
-    printf("Empate na categoria Área!\n");
-  }
-
-  if (pibCarta1 > pibCarta2) {
-    printf("Carta 1 vence na categoria PIB!\n");
-  } else if (pibCarta1 < pibCarta2) {
-    printf("Carta 2 vence na categoria PIB!\n");
-  } else {
-    printf("Empate na categoria PIB!\n");
-  }
-
-  if (qtdPontosTuristicosCarta1 > qtdPontosTuristicosCarta2) {
-    printf("Carta 1 vence na categoria Pontos Turísticos!\n");
-  } else if (qtdPontosTuristicosCarta1 < qtdPontosTuristicosCarta2) {
-    printf("Carta 2 vence na categoria Pontos Turísticos!\n");
-  } else {
-    printf("Empate na categoria Pontos Turísticos!\n");
-  }
-
-  if (densidadePopulacionalCarta1 > densidadePopulacionalCarta2) {
-    printf("Carta 1 vence na categoria Densidade Populacional!\n");
-  } else if (densidadePopulacionalCarta1 < densidadePopulacionalCarta2) {
-    printf("Carta 2 vence na categoria Densidade Populacional!\n");
-  } else {
-    printf("Empate na categoria Densidade Populacional!\n");
-  }
-
-  if (pibPerCapitaCarta1 > pibPerCapitaCarta2) {
-    printf("Carta 1 vence na categoria PIB per Capita!\n");
-  } else if (pibPerCapitaCarta1 < pibPerCapitaCarta2) {
-    printf("Carta 2 vence na categoria PIB per Capita!\n");
-  } else {
-    printf("Empate na categoria PIB per Capita!\n");
-  }
-
-  if (superPoderCarta1 > superPoderCarta2) {
-    printf("Carta 1 vence na categoria Super Poder!\n");
-  } else if (superPoderCarta1 < superPoderCarta2) {
-    printf("Carta 2 vence na categoria Super Poder!\n");
-  } else {
-    printf("Empate na categoria Super Poder!\n");
-  }
+    printf("\nComparação de Cartas:\n");
+    printf("População: %d\n", populacaoCarta1 > populacaoCarta2);
+    printf("Área: %d\n", areaKmqCarta1 > areaKmqCarta2);
+    printf("PIB: %d\n", pibCarta1 > pibCarta2);
+    printf("Pontos Turísticos: %d\n", qtdPontosTuristicosCarta1 > qtdPontosTuristicosCarta2);
+    printf("Densidade Populacional: %d\n", densidadePopulacionalCarta1 < densidadePopulacionalCarta2);
+    printf("PIB per Capita: %d\n", pibPerCapitaCarta1 > pibPerCapitaCarta2);
+    printf("Super Poder: %d\n", superPoderCarta1 > superPoderCarta2);
 
   return 0;
 }
