@@ -99,6 +99,7 @@ int main() {
   printf("Pontos turísticos: %d\n", qtdPontosTuristicosCarta1);
   printf("Densidade populacional: %.2lf hab/km²\n", densidadePopulacionalCarta1);
   printf("PIB per capita: %.2lf reais\n", pibPerCapitaCarta1);
+  printf("Super Poder: %.2lf\n", superPoderCarta1);
 
   // --- Entrada dos dados da carta 2 ---
   printf("\nDigite a letra que representa o Estado da carta 2:\n");
@@ -152,6 +153,7 @@ int main() {
   printf("Pontos turísticos: %d\n", qtdPontosTuristicosCarta2);
   printf("Densidade populacional: %.2lf hab/km²\n", densidadePopulacionalCarta2);
   printf("PIB per capita: %.2lf reais\n", pibPerCapitaCarta2);
+  printf("Super Poder: %.2lf\n", superPoderCarta2);
   
   // --- Placar Final ---
   printf("\n");
