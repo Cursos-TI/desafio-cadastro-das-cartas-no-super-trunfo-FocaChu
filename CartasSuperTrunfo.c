@@ -32,9 +32,11 @@ int main() {
     int qtdPontosTuristicosCarta1;
     int qtdPontosTuristicosCarta2;
 
+    //densidade populacional(população dividida pela área)
     float densidadePopulacionalCarta1;
     float densidadePopulacionalCarta2;
 
+    //PIB per capita (PIB dividido pela população)
     float pibPerCapitaCarta1;
     float pibPerCapitaCarta2;
 
@@ -72,7 +74,8 @@ int main() {
 
     //calcula o restante das informações
     densidadePopulacionalCarta1 = populacaoCarta1 / areaKmqCarta1;
-    pibPerCapitaCarta1 = pibCarta1 / populacaoCarta1;
+    pibPerCapitaCarta1 = (pibCarta1 * 1000000000.0f) / populacaoCarta1;
+
 
     //Exibição dos dados da carta 1
     printf("\nCarta 1:\n");
@@ -117,7 +120,7 @@ int main() {
 
     //calcula o restante das informações
     densidadePopulacionalCarta2 = populacaoCarta2 / areaKmqCarta2;
-    pibPerCapitaCarta2 = pibCarta2 / populacaoCarta2;
+    pibPerCapitaCarta2 = (pibCarta2 * 1000000000.0f) / populacaoCarta2;
 
     //Exibição dos dados da carta 2
     printf("\nCarta 2:\n");
