@@ -184,7 +184,7 @@ int main() {
   printf("PIB per capita: %.2lf reais\n", pibPerCapitaCarta2);
   printf("Super Poder: %.2lf\n", superPoderCarta2);
   
-  // --- Placar Final ---
+  // --- Placar Final Em Binário---
   printf("\n");
 
     printf("\nComparação de Cartas:\n");
